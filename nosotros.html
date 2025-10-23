@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agronomía Rafael Losinno</title>
+<link rel="icon" type="image/png" href="icono.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="footer.js"></script>
+</head>
+
+<body>
+<header>
+<div class="logo">
+    <img src="losinno3.png" alt="Logo Agronomía Rafael Losinno">
+    </div>
+
+    <nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+
+<li class="dropdown">
+<a href="#">Productos ▾</a>
+<div class="dropdown-content">
+    <a href="maiz.html">Maíz</a>
+    <a href="girasol.html">Girasol</a>
+    <a href="trigo.html">Trigo</a>
+    <a href="soja.html">Soja</a>
+</div>
+</li>
+
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+
+    </ul>
+
+    <div class="social-icons">
+    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+</div>
+
+    <div class="carrito-icono" onclick="toggleCarrito()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="contador-carrito">0</span>
+    </div>
+    </nav>
+
+
+<section class="carrito" id="carrito">
+<div class="carrito-header">
+    <h2>🛒 Tu carrito</h2>
+    <button class="btn-cerrar" onclick="toggleCarrito()">✖</button>
+</div>
+
+<div id="lista-carrito"></div>
+<p id="total">Total: $0</p>
+
+<button class="btn-pagar" onclick="pagar()">Pagar</button>
+</header>
+
+
+</section>
+<section id="nosotros" class="nosotros">
+<div class="nosotros-contenido">
+    <div class="texto">
+    <h2>Agronomía Rafael Losinno</h2>
+    <p>
+        Con más de <strong>30 años de trayectoria</strong>, Agronomía Rafael Losinno se consolida como un referente local en el
+        abastecimiento de insumos agrícolas en <strong>Ayacucho, Provincia de Buenos Aires</strong>.
+    </p>
+    <p>
+        Representamos a las principales <strong>cooperativas y semilleros</strong> del país, brindando acceso a productos de
+        calidad para que los productores de nuestra región cuenten con todo lo necesario para su trabajo diario.
+    </p>
+    <p>
+        Nuestra misión es acompañar al campo con <strong>semillas, insumos y asesoramiento técnico</strong>, ofreciendo un
+        servicio confiable, cercano y sustentable que respalde a quienes día a día producen alimentos para nuestra comunidad.
+    </p>
+    </div>
+
+</div>
+</section>
+
+<section id="valores" class="valores">
+<h2 class="titulo-valores">NUESTROS VALORES</h2>
+
+<div class="valores-grid">
+    
+    <div class="valor-card">
+    <div class="overlay-valor">
+        <h3>Nuestro <span>PROGRESO</span></h3>
+        <p>Siempre ha estado en el centro de nuestras convicciones y nuestra misión.</p>
+    </div>
+    </div>
+
+    <div class="valor-card">
+    <div class="overlay-valor">
+        <h3>Nuestra <span>PERSEVERANCIA</span></h3>
+        <p>Proviene de nuestra gobernanza cooperativa y espíritu de trabajo continuo.</p>
+    </div>
+    </div>
+
+    <div class="valor-card">
+    <div class="overlay-valor">
+        <h3>Nuestra <span>COOPERACIÓN</span></h3>
+        <p>Creemos en el trabajo conjunto como base de un crecimiento sustentable.</p>
+    </div>
+    </div>
+
+</div>
+</section>
+
+
+<style>
+body { 
+margin: 0; 
+font-family: "Exo 2", Arial, sans-serif; 
+color: #333; }
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0.5rem 3rem;
+position: sticky; 
+top: 0;
+
+width: 100%;
+z-index: 1000;
+background: #fff;
+border-bottom: 2px solid #006D40;
+transition: all 0.4s ease;
+}
+
+header .logo img {
+height: auto;
+max-height: 70px;  
+width: auto;
+}
+
+header .logo {
+padding: 0.3rem 1.5rem;
+}
+
+header .logo img {
+height: 90px;
+width: auto;
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header .logo img:hover {
+transform: scale(1.08);
+filter: brightness(1.1);
+}
+
+header nav {
+flex: 1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1rem;
+}
+
+header nav ul {
+list-style: none;
+display: flex;
+gap: 2rem;
+margin: 0;
+padding: 0;
+}
+
+header nav ul li a {
+text-decoration: none;
+color: #006D40;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 0.95rem;
+transition: color 0.3s ease;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons i {
+  font-size: 22px;
+  color: #006D40;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #00a060;
+  transform: scale(1.2);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+color: #006D40;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+font-weight: 500;
+}
+
+header {
+background: white;
+border: none;
+position: sticky;
+padding: 0;
+}
+
+header:hover {
+background: #fff;
+border-bottom: 2px solid #006D40;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-content a:hover {
+background-color: #f5f5f5;
+color: #e60000;
+}
+nav ul li a:hover {
+  color: #00a060;;
+}
+
+.dropdown-content a:hover {
+  color: #00a060;
+}
+
+.carrito-icono i:hover {
+  color: #00a060;
+  transform: scale(1.2);; 
+}
+.dropdown:hover .dropdown-content {
+display: block;
+}
+</style>
+
+<style>
+.nosotros {
+    position: relative;
+    background: url("fondo4.webp") center/cover fixed no-repeat;
+    color: #fff;
+    padding: 6rem 2rem;
+    overflow: hidden;
+}
+
+.nosotros::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+.nosotros-contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeInUp 1.5s ease both;
+    }
+
+    .texto {
+    flex: 1 1 500px;
+    color: #f2f2f2;
+    }
+
+    .texto h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    animation: slideRight 1.2s ease both;
+    }
+
+    .texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    animation: fadeIn 1.6s ease both;
+    }
+
+    .btn-nosotros {
+    display: inline-block;
+    background: linear-gradient(90deg, #006D40, #00a95c);
+    color: white;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-nosotros:hover {
+    background: linear-gradient(90deg, #00a95c, #006D40);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .imagen {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideLeft 1.2s ease both;
+    }
+
+    .imagen img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    }
+
+    .imagen img:hover {
+    transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideLeft {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+
+    </style>
+
+    <style>
+    .valores {
+    background: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    }
+
+    .titulo-valores {
+    color: #e60000;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    }
+
+    .valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    }
+
+    .valor-card {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    }
+
+    .valor-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    }
+
+    .overlay-valor {
+    position: absolute;
+    inset: 0;
+    background: rgba(230, 0, 0, 0.65);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    transition: background 0.4s ease, opacity 0.4s ease;
+    }
+
+    .valor-card:hover .overlay-valor {
+    background: rgba(0, 109, 64, 0.75);
+    }
+
+    .overlay-valor h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.4;
+    }
+
+    .overlay-valor h3 span {
+    display: block;
+    font-size: 2.4rem;
+    }
+
+    .overlay-valor p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 90%;
+    opacity: 0.9;
+    }
+
+    .valor-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+    }
+
+    .valor-card:nth-child(1) { animation-delay: 0.2s; }
+    .valor-card:nth-child(2) { animation-delay: 0.4s; }
+    .valor-card:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+.carrito-icono {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #006D40;
+  margin-right: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.carrito-icono:hover {
+  transform: scale(1.1);
+}
+
+.carrito-icono i {
+  font-size: 1.8rem;
+}
+
+.carrito {
+  display: none;
+}
+
+.carrito.visible {
+  display: block;
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #d60000;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.btn-agregar {
+  background: #d60000;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-agregar:hover {
+  background: #a30000;
+  transform: scale(1.05);
+}
+
+.carrito {
+  position: fixed;     
+  top: 0;                     
+  right: -400px;              
+  width: 350px;               
+  height: 100%;               
+  background: #fff;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 2rem;
+  transition: right 0.3s ease; 
+  z-index: 1000;
+  overflow-y: auto;           
+}
+
+.carrito.visible {
+  right: 0;                    
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.info-producto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cantidad-btn {
+  background: #d60000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: #d60000;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #d60000;
+  transition: transform 0.2s ease;
+}
+
+.btn-cerrar:hover {
+  transform: scale(1.2);
+}
+.btn-pagar {
+  background: linear-gradient(90deg, #006D40, #00b06a);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pagar:hover {
+  background: linear-gradient(90deg, #00b06a, #006D40);
+  transform: translateY(-3px);
+}
+</style>
+</body>
+</html>

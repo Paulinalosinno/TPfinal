@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agronomía Rafael Losinno - Contacto</title>
+  <link rel="icon" type="image/png" href="icono.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+<header>
+<div class="logo">
+<img src="losinno3.png" alt="Logo Agronomía Rafael Losinno">
+</div>
+
+<nav>
+<ul>
+<li><a href="TP.html">Inicio</a></li>
+
+<li class="dropdown">
+<a href="#">Productos ▾</a>
+<div class="dropdown-content">
+  <h3>SEMILLAS</h3>
+    <a href="maiz.html">Maíz</a>
+    <a href="girasol.html">Girasol</a>
+    <a href="trigo.html">Trigo</a>
+    <a href="soja.html">Soja</a>
+</div>
+</li>
+
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+
+</ul>
+
+<div class="social-icons">
+    <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  </div>
+
+<div class="carrito-icono" onclick="toggleCarrito()">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="contador-carrito">0</span>
+</div>
+</nav>
+
+<section class="carrito" id="carrito">
+  <div class="carrito-header">
+    <h2>🛒 Tu carrito</h2>
+    <button class="btn-cerrar" onclick="toggleCarrito()">✖</button>
+  </div>
+
+  <div id="lista-carrito"></div>
+  <p id="total">Total: $0</p>
+
+<button class="btn-pagar" onclick="pagar()">Pagar</button>
+
+</section>
+
+</header>
+
+<section class="hero-servicios">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>NUESTROS SERVICIOS</h1>
+    <p>
+      Te acompañamos con soluciones técnicas, asesoramiento agronómico y herramientas digitales
+      para optimizar tu producción.
+    </p>
+    <a href="#servicios-lista" class="btn-hero">Conocé más</a>
+  </div>
+</section>
+
+<section id="servicios-lista" class="servicios-grid">
+  <div class="servicio-card">
+    <i class="fa-solid fa-leaf"></i>
+    <h2>Análisis de Suelo</h2>
+    <p>Determinamos las características químicas y físicas del suelo para diseñar estrategias de fertilización precisas.</p>
+  </div>
+
+  <div class="servicio-card">
+    <i class="fa-solid fa-seedling"></i>
+    <h2>Asesoramiento Técnico</h2>
+    <p>Te ayudamos a elegir las mejores semillas, productos y manejos para lograr el máximo rendimiento en tu campo.</p>
+  </div>
+
+  <div class="servicio-card">
+    <i class="fa-solid fa-tablet-screen-button"></i>
+    <h2>Agricultura Digital</h2>
+    <p>Implementamos herramientas tecnológicas para monitoreo, trazabilidad y gestión eficiente de cultivos.</p>
+  </div>
+
+  <div class="servicio-card">
+    <i class="fa-solid fa-tractor"></i>
+    <h2>Maquinaria y Logística</h2>
+    <p>Coordinamos la provisión de maquinaria agrícola y transporte para tus campañas de siembra y cosecha.</p>
+  </div>
+
+  <div class="servicio-card">
+    <i class="fa-solid fa-flask-vial"></i>
+    <h2>Control de Plagas y Enfermedades</h2>
+    <p>Diseñamos programas integrales de manejo fitosanitario para proteger tus cultivos con eficiencia y sustentabilidad.</p>
+  </div>
+
+  <div class="servicio-card">
+    <i class="fa-solid fa-droplet"></i>
+    <h2>Gestión del Agua</h2>
+    <p>Optimizamos el uso del recurso hídrico con planificación de riego, monitoreo y tecnologías de eficiencia.</p>
+  </div>
+
+</section>
+
+<script src="footer.js"></script>
+
+<style>
+body { 
+    margin: 0; 
+    font-family: "Exo 2", Arial, sans-serif; 
+    color: #333; }
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0.5rem 3rem;
+position: sticky;
+top: 0;
+
+width: 100%;
+z-index: 1000;
+background: #fff;
+border-bottom: 2px solid #006D40;
+transition: all 0.4s ease;
+}
+
+header .logo img {
+height: auto;
+max-height: 70px; 
+width: auto;
+}
+
+header .logo {
+padding: 0.3rem 1.5rem;
+}
+
+header .logo img {
+height: 90px;
+width: auto;
+transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+header .logo img:hover {
+transform: scale(1.08);
+filter: brightness(1.1);
+}
+
+header nav {
+flex: 1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1rem;
+}
+
+header nav ul {
+list-style: none;
+display: flex;
+gap: 2rem;
+margin: 0;
+padding: 0;
+}
+
+header nav ul li a {
+text-decoration: none;
+color: #006D40;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 0.95rem;
+transition: color 0.3s ease;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-icons i {
+  font-size: 22px;
+  color: #006D40;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #00a060;
+  transform: scale(1.2);
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content h3 {
+  margin: 10px 16px 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #006D40;
+  border-bottom: 2px solid #006D40;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+}
+
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #fff;
+min-width: 200px;
+box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+z-index: 1000;
+border-radius: 4px;
+}
+
+.dropdown-content a {
+color: #006D40;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+font-weight: 500;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+header {
+background: white;
+border: none;
+position: sticky;
+padding: 0;
+}
+
+header:hover {
+background: #fff;
+border-bottom: 2px solid #006D40;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul li a:hover {
+  color: #00a060;;
+}
+
+.dropdown-content a:hover {
+  color: #00a060;
+}
+
+.carrito-icono i:hover {
+  color: #00a060;
+  transform: scale(1.2);; 
+}
+.dropdown:hover .dropdown-content {
+display: block;
+}
+</style>
+
+<style>
+.hero-servicios {
+  position: relative;
+  height: 90vh;
+  background: url("fondo3.jpeg") center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-servicios::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.55)
+  );
+  animation: fondoMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes fondoMove {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 2rem;
+  animation: fadeInUp 1.5s ease both;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #f3f3f3;
+  line-height: 1.7;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero {
+  background: linear-gradient(90deg, #006D40, #00b06a);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-hero:hover {
+  background: linear-gradient(90deg, #00b06a, #006D40);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.servicios-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 3rem;
+  background: #faf9f9;
+  padding: 4rem 2rem;
+  margin-top: 0;
+}
+
+.servicio-card {
+  background: #fff;
+  width: 320px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicio-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #006D40, #009e60);
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.servicio-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.servicio-card i {
+  font-size: 3rem;
+  color: #006D40;
+  margin-bottom: 1rem;
+}
+
+.servicio-card h2 {
+  color: #006D40;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+
+.servicio-card p {
+  line-height: 1.6;
+  color: #444;
+  font-size: 1rem;
+}
+
+.carrito-icono {
+  position: relative;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #006D40;
+  margin-right: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.carrito-icono:hover {
+  transform: scale(1.1);
+}
+
+.carrito-icono i {
+  font-size: 1.8rem;
+}
+
+.carrito {
+  display: none;
+}
+
+.carrito.visible {
+  display: block;
+}
+
+#contador-carrito {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #d60000;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.btn-agregar {
+  background: #d60000;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-agregar:hover {
+  background: #a30000;
+  transform: scale(1.05);
+}
+
+.carrito {
+  position: fixed;     
+  top: 0;                     
+  right: -400px;              
+  width: 350px;               
+  height: 100%;               
+  background: #fff;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  padding: 2rem;
+  transition: right 0.3s ease; 
+  z-index: 1000;
+  overflow-y: auto;           
+}
+
+.carrito.visible {
+  right: 0;                    
+}
+
+.item-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.thumb {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.info-producto {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cantidad-btn {
+  background: #d60000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  background: none;
+  border: none;
+  color: #d60000;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.carrito-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #d60000;
+  transition: transform 0.2s ease;
+}
+
+.btn-cerrar:hover {
+  transform: scale(1.2);
+}
+
+.btn-pagar {
+  background: linear-gradient(90deg, #006D40, #00b06a);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-pagar:hover {
+  background: linear-gradient(90deg, #00b06a, #006D40);
+  transform: translateY(-3px);
+}
+
+</style>
+
+
+<style>
+@media (max-width: 768px) {
+  body {
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  main, section, .contenido {
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p  { font-size: 1rem; line-height: 1.6; }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-servicios {
+    height: 60vh;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-hero {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .servicios-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .servicio-card {
+    width: 90%;
+    max-width: 350px;
+    padding: 2rem 1.5rem;
+  }
+
+  .servicio-card i {
+    font-size: 2.5rem;
+  }
+
+  .servicio-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .servicio-card p {
+    font-size: 0.95rem;
+  }
+
+  header {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 4px solid #006D40;
+  }
+
+  .logo {
+    background: #fff;
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
+  .logo img {
+    max-width: 160px;
+    height: auto;
+  }
+
+  nav {
+    width: 100%;
+    background: #fff;
+    border-top: 2px solid #006D40;
+    padding: 0.6rem 0;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  nav ul li a {
+    color: #006D40;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #00a060;
+  }
+
+  nav ul li:first-child,  
+  nav ul li:nth-child(4) {   
+    display: none;
+  }
+
+  .social-icons {
+    display: none;
+  }
+
+  .carrito-icono {
+    margin-left: 0;
+    margin-right: 1rem;
+    position: relative;
+  
+  }
+
+  .carrito-icono i {
+    font-size: 1rem; 
+    color: #006D40;
+    transition: transform 0.2s ease;
+  }
+
+  .carrito-icono i:hover {
+    color: #00a060;
+    transform: scale(1.1);
+  }
+
+  #contador-carrito {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+    min-width: 14px;
+    top: -6px;
+    right: -8px;
+  }
+}
+
+</style>
+</body>
+</html>
