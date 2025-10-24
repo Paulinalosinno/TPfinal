@@ -798,8 +798,29 @@ html, body {
     font-size: 0.9rem;
     border-radius: 8px;
   }
+ 
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background: #fff;
+  border: 1px solid #006D40;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
 }
 
 </style>
 </body>
+
 </html>
