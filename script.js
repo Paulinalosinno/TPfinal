@@ -366,3 +366,14 @@ window.onclick = function(event) {
   const modal = document.getElementById("modalImagen");
   if (event.target === modal) modal.style.display = "none";
 };
+
+document.addEventListener("DOMContentLoaded", function() {
+  const logo = document.querySelector("header .logo");
+
+  if (logo && window.innerWidth <= 768) {
+    logo.addEventListener("click", function() {
+      window.location.href = "index.html"; // te lleva al inicio
+    });
+  }
+});
+
