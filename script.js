@@ -252,7 +252,6 @@ function agregarAlCarrito(idProducto) {
   mostrarCarrito();
   guardarCarrito();
 
-  // Mensaje visual
   const aviso = document.createElement("div");
   aviso.textContent = `${producto.nombre} agregado al carrito 🛒`;
   aviso.classList.add("mensaje-agregado");
@@ -324,7 +323,6 @@ function pagar() {
 
   alert("Procesando el pago...");
 
-  // Vacía el carrito después del "pago"
   carrito = [];
 
   actualizarContador();
@@ -332,6 +330,22 @@ function pagar() {
   guardarCarrito();
   toggleCarrito();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const botonHero = document.querySelector(".btn-hero");
+
+  function actualizarDestino() {
+    if (!botonHero) return;
+    if (window.innerWidth <= 768) {
+      botonHero.setAttribute("href", "servicios.html"); // versión mobile
+    } else {
+      botonHero.setAttribute("href", "nosotros.html");  // versión escritorio
+    }
+  }
+
+  actualizarDestino(); // ejecuta al cargar la página
+  window.addEventListener("resize", actualizarDestino); // ejecuta si se cambia el tamaño
+});
 
 
 function abrirImagen(ruta) {
